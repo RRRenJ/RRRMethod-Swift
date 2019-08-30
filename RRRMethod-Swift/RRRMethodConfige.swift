@@ -1,5 +1,5 @@
 //
-//  RRRMethod-Confige.swift
+//  RRRMethodConfige.swift
 //  RRRMethod-SwiftDemo
 //
 //  Created by 任敬 on 2019/8/26.
