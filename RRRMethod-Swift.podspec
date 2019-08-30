@@ -27,6 +27,7 @@ Pod::Spec.new do |s|
   s.subspec 'CollocationFlowLayout' do |ss|
 
   ss.source_files = 'RRRMethod-Swift/CollocationFlowLayout/*.swift'
+  ss.dependency 'RRRMethod-Swift/RRRMethod-Swift'
 
   end
 

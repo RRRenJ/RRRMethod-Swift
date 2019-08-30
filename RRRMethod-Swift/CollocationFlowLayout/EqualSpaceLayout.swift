@@ -9,6 +9,7 @@
 import UIKit
 
 
+
 public enum AlignType {
     case left
     case center
