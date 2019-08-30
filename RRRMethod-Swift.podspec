@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "RRRMethod-Swift"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "个人使用的swift方法汇集"
   s.description  = <<-DESC
                     个人使用的swift方法汇集
@@ -17,6 +17,24 @@ Pod::Spec.new do |s|
   s.frameworks   = 'UIKit', 'Foundation'
   s.swift_version = '5.0'
   s.ios.deployment_target = '9.0'
+
+  s.subspec 'RRRCountDownMethod' do |ss|
+
+  ss.source_files = 'RRRMethod/RRRCountDownMethod/*.swif'
+
+  end
+
+  s.subspec 'CollocationFlowLayout' do |ss|
+
+  ss.source_files = 'RRRMethod/CollocationFlowLayout/*.swif'
+
+  end
+
+  s.subspec 'QRCreateMethod' do |ss|
+
+  ss.source_files = 'RRRMethod/QRCreateMethod/*.swif'
+
+  end
 
 
 end
