@@ -20,19 +20,19 @@ Pod::Spec.new do |s|
 
   s.subspec 'RRRCountDownMethod' do |ss|
 
-  ss.source_files = 'RRRMethod-Swift/RRRCountDownMethod/*.swif'
+  ss.source_files = 'RRRMethod-Swift/RRRCountDownMethod/*.swift'
 
   end
 
   s.subspec 'CollocationFlowLayout' do |ss|
 
-  ss.source_files = 'RRRMethod-Swift/CollocationFlowLayout/*.swif'
+  ss.source_files = 'RRRMethod-Swift/CollocationFlowLayout/*.swift'
 
   end
 
   s.subspec 'QRCreateMethod' do |ss|
 
-  ss.source_files = 'RRRMethod-Swift/QRCreateMethod/*.swif'
+  ss.source_files = 'RRRMethod-Swift/QRCreateMethod/*.swift'
 
   end
 
