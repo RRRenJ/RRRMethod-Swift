@@ -18,24 +18,7 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
   s.ios.deployment_target = '9.0'
 
-  s.subspec 'RRRCountDownMethod' do |ss|
-
-  ss.source_files = 'RRRMethod-Swift/RRRCountDownMethod/*.swift'
-
-  end
-
-  s.subspec 'CollocationFlowLayout' do |ss|
-
-  ss.source_files = 'RRRMethod-Swift/CollocationFlowLayout/*.swift'
-  ss.dependency 'RRRMethod-Swift/RRRMethodConfige'
-
-  end
-
-  s.subspec 'QRCode' do |ss|
-
-  ss.source_files = 'RRRMethod-Swift/QRCode/*.swift'
-
-  end
+  
 
 
 end
