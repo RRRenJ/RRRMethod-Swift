@@ -30,9 +30,9 @@ Pod::Spec.new do |s|
 
   end
 
-  s.subspec 'QRCreateMethod' do |ss|
+  s.subspec 'QRCode' do |ss|
 
-  ss.source_files = 'RRRMethod-Swift/QRCreateMethod/*.swift'
+  ss.source_files = 'RRRMethod-Swift/QRCode/*.swift'
 
   end
 
