@@ -18,7 +18,7 @@ public class RRRCountDownMethod: NSObject {
     private var button : UIButton!
     private var timer : DispatchSourceTimer!
     
-    init(button:UIButton! , start:String! , wait:String! , end:String! , time:Int? = 60){
+    public init(button:UIButton! , start:String! , wait:String! , end:String! , time:Int? = 60){
         self.button = button
         self.start = start;
         self.wait = wait;

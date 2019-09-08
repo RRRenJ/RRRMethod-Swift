@@ -25,7 +25,7 @@ public class EqualSpaceLayout: UICollectionViewFlowLayout {
     
   
     
-    init(_ type : AlignType! , _ space : CGFloat) {
+   public init(_ type : AlignType! , _ space : CGFloat) {
         super.init()
         self.scrollDirection = .vertical
         self.minimumLineSpacing = 5
