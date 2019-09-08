@@ -16,7 +16,7 @@ public class RRRCountDownMethod: NSObject {
     private var wait : String!
     private var end : String!
     private var button : UIButton!
-    private var timer : DispatchSourceTimer!
+    private var timer : DispatchSourceTimer?
     
     public init(button:UIButton! , start:String! , wait:String! , end:String! , time:Int? = 60){
         self.button = button
@@ -34,10 +34,10 @@ public class RRRCountDownMethod: NSObject {
     
     public func sending(){
         self.timer = DispatchSource.makeTimerSource(queue: DispatchQueue.global())
-        self.timer.schedule(deadline: .now(), repeating: .seconds(1))
+        self.timer!.schedule(deadline: .now(), repeating: .seconds(1))
         self.seconds = self.totalSeconds
         
-        self.timer.setEventHandler(handler: {
+        self.timer!.setEventHandler(handler: {
             let title = "\(String(self.seconds))s"
             DispatchQueue.main.async {
                 self.button.setTitle(title, for: UIControl.State.disabled)
@@ -48,12 +48,12 @@ public class RRRCountDownMethod: NSObject {
             }
             self.seconds -= 1
         })
-        self.timer.resume()
+        self.timer!.resume()
        
     }
     
     public func resend(){
-        self.timer.cancel()
+        self.timer?.cancel()
         self.button.isEnabled = true
         self.button.setTitle(self.end, for: UIControl.State.normal)
     }
