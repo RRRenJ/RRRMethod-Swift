@@ -67,7 +67,7 @@ public enum PrivacyPath {
 
 public class PrivacyManager: NSObject {
 
-    static let `default` = PrivacyManager()
+    public static let `default` = PrivacyManager()
 
     private typealias CBManagerStatusBlock = (CBCentralManagerState) -> Void
 
