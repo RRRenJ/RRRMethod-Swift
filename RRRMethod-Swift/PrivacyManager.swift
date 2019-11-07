@@ -15,7 +15,7 @@ import CoreBluetooth
 
 
 
-enum PrivacyAuthorizationStatus {
+public enum PrivacyAuthorizationStatus {
     ///未选择权限
     case notDetermined
     ///授权
@@ -34,7 +34,7 @@ enum PrivacyAuthorizationStatus {
     case authorizedWhenInUse
 }
 
-enum PrivacyCBManagerStatus {
+public enum PrivacyCBManagerStatus {
     ///未知状态
     case unkown
     ///正在重置，与系统服务暂时丢失
@@ -49,7 +49,7 @@ enum PrivacyCBManagerStatus {
     case poweredOn
 }
 
-enum PrivacyUsage {
+public enum PrivacyUsage {
     case camera
     case photo
     case microphone
@@ -59,13 +59,13 @@ enum PrivacyUsage {
     case calendar
 }
 
-enum PrivacyPath {
+public enum PrivacyPath {
     case privacy
     case bluetooth
 }
 
 
-class PrivacyManager: NSObject {
+public class PrivacyManager: NSObject {
 
     static let `default` = PrivacyManager()
 
@@ -224,7 +224,7 @@ private extension PrivacyManager {
         }
 }
 ///checkBluetooth
-extension PrivacyManager : CBCentralManagerDelegate {
+public extension PrivacyManager : CBCentralManagerDelegate {
 
     func canUsageBluetooth(completetion : @escaping (PrivacyCBManagerStatus) -> Void ) {
         self.cbStatusBlock = { status in
@@ -271,7 +271,7 @@ extension PrivacyManager : CBCentralManagerDelegate {
 
 }
 ///registerPrivacy
- extension PrivacyManager {
+public extension PrivacyManager {
     
     func registerLocation(type : PrivacyUsage , completetion : @escaping (PrivacyAuthorizationStatus) -> Void) {
         let locationStatus = PrivacyManager.checkLocation()
@@ -408,7 +408,7 @@ extension PrivacyManager : CBCentralManagerDelegate {
     }
 }
 
-extension PrivacyManager : CLLocationManagerDelegate {
+public extension PrivacyManager : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if let _ = self.lcStatusBlock{
             self.lcStatusBlock!(status)
@@ -416,7 +416,7 @@ extension PrivacyManager : CLLocationManagerDelegate {
     }
 }
 
-extension PrivacyManager {
+public extension PrivacyManager {
     static func jumpToPrivacy(path : PrivacyPath){
         var url : URL?
         if path == .privacy {
