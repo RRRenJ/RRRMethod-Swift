@@ -99,14 +99,14 @@ public class PrivacyManager: NSObject {
         }
     }
 
-    private lazy var cManager: CBCentralManager = {
-        var manager = CBCentralManager.init(delegate: self, queue: nil)
-        return manager
-    }()
+//    private lazy var cManager: CBCentralManager = {
+//        var manager = CBCentralManager.init(delegate: self, queue: nil)
+//        return manager
+//    }()
     
     lazy var locationManager: CLLocationManager = {
         var manager = CLLocationManager()
-        manager.delegate = self
+       
         return manager
     }()
     
@@ -224,52 +224,53 @@ private extension PrivacyManager {
         }
 }
 ///checkBluetooth
- extension PrivacyManager : CBCentralManagerDelegate {
-
-   public func canUsageBluetooth(completetion : @escaping (PrivacyCBManagerStatus) -> Void ) {
-        self.cbStatusBlock = { status in
-            switch status {
-            case .resetting:
-                completetion(.resetting)
-            case .unsupported:
-                completetion(.unsupport)
-            case .unauthorized:
-                completetion(.unauthorized)
-            case .poweredOff:
-                completetion(.poweredOff)
-            case .poweredOn:
-                completetion(.poweredOn)
-            default:
-                completetion(.unkown)
-            }
-        }
-    }
-    
-
-    public func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        var state = CBCentralManagerState.unknown
-        switch central.state {
-        case .unknown:
-            state = .unknown
-        case .resetting:
-            state = .resetting
-        case .unsupported:
-            state = .unsupported
-        case .unauthorized:
-            state = .unauthorized
-        case .poweredOff:
-            state = .poweredOff
-        case .poweredOn:
-            state = .poweredOn
-        @unknown default:
-            state = .unknown
-        }
-        if let _ = self.cbStatusBlock{
-            self.cbStatusBlock!(state)
-        }
-     }
-
-}
+// extension PrivacyManager : CBCentralManagerDelegate {
+//
+//   public func canUsageBluetooth(completetion : @escaping (PrivacyCBManagerStatus) -> Void ) {
+//        self.cManager.delegate = self
+//        self.cbStatusBlock = { status in
+//            switch status {
+//            case .resetting:
+//                completetion(.resetting)
+//            case .unsupported:
+//                completetion(.unsupport)
+//            case .unauthorized:
+//                completetion(.unauthorized)
+//            case .poweredOff:
+//                completetion(.poweredOff)
+//            case .poweredOn:
+//                completetion(.poweredOn)
+//            default:
+//                completetion(.unkown)
+//            }
+//        }
+//    }
+//
+//
+//    public func centralManagerDidUpdateState(_ central: CBCentralManager) {
+//        var state = CBCentralManagerState.unknown
+//        switch central.state {
+//        case .unknown:
+//            state = .unknown
+//        case .resetting:
+//            state = .resetting
+//        case .unsupported:
+//            state = .unsupported
+//        case .unauthorized:
+//            state = .unauthorized
+//        case .poweredOff:
+//            state = .poweredOff
+//        case .poweredOn:
+//            state = .poweredOn
+//        @unknown default:
+//            state = .unknown
+//        }
+//        if let _ = self.cbStatusBlock{
+//            self.cbStatusBlock!(state)
+//        }
+//     }
+//
+//}
 ///registerPrivacy
 public extension PrivacyManager {
     
