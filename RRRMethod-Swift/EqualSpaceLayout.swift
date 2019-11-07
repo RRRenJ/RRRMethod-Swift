@@ -44,7 +44,7 @@ public class EqualSpaceLayout: UICollectionViewFlowLayout {
 public extension EqualSpaceLayout {
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         let layoutAttributes_t = super.layoutAttributesForElements(in: rect) ?? Array()
-        var layoutAttributes = layoutAttributes_t
+        let layoutAttributes = layoutAttributes_t
         var layoutAttributesTemp  = [UICollectionViewLayoutAttributes]()
         for i in 0..<layoutAttributes.count {
             let currentAttr = layoutAttributes[i]

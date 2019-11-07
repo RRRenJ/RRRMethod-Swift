@@ -224,9 +224,9 @@ private extension PrivacyManager {
         }
 }
 ///checkBluetooth
-public extension PrivacyManager : CBCentralManagerDelegate {
+ extension PrivacyManager : CBCentralManagerDelegate {
 
-    func canUsageBluetooth(completetion : @escaping (PrivacyCBManagerStatus) -> Void ) {
+   public func canUsageBluetooth(completetion : @escaping (PrivacyCBManagerStatus) -> Void ) {
         self.cbStatusBlock = { status in
             switch status {
             case .resetting:
@@ -246,7 +246,7 @@ public extension PrivacyManager : CBCentralManagerDelegate {
     }
     
 
-    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+    public func centralManagerDidUpdateState(_ central: CBCentralManager) {
         var state = CBCentralManagerState.unknown
         switch central.state {
         case .unknown:
@@ -408,8 +408,8 @@ public extension PrivacyManager {
     }
 }
 
-public extension PrivacyManager : CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+extension PrivacyManager : CLLocationManagerDelegate {
+   public  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if let _ = self.lcStatusBlock{
             self.lcStatusBlock!(status)
         }
