@@ -1,6 +1,0 @@
-framework module RRRExtension {
-  umbrella header "RRRExtension-umbrella.h"
-
-  export *
-  module * { export * }
-}
